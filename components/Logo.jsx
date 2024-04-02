@@ -1,4 +1,4 @@
-import logo from "@assets/lws_logo.png";
+import logo from "@/public/assets/lws_logo.png";
 import Image from "next/image";
 import Link from "next/link";
 
