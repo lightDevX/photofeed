@@ -1,13 +1,14 @@
 import { getDictionary } from "@/app/[lang]/dictionaries";
-import follow from "@public/assets/icons/follow.svg";
 import Image from "next/image";
+import follow from "../public/assets/icons/follow.svg";
+import likes from "../public/assets/icons/heart.svg";
+import save from "../public/assets/icons/save.svg";
+import shares from "../public/assets/icons/share.svg";
 
 const PhotoDetails = async ({ id, lang }) => {
 
     const response = await fetch(`${process.env.BASE_API_URL}/photos/${id}`);
     const photo = await response.json();
-
-    console.log(photo);
 
     const dictionary = await getDictionary(lang);
 
@@ -76,7 +77,7 @@ const PhotoDetails = async ({ id, lang }) => {
                         <div className="flex items-stretch gap-3">
                             <button className="flex-1 border py-1.5 rounded text-xs lg:text-sm flex items-center justify-center text-center gap-1.5 font-bold hover:bg-yellow-400">
                                 <Image
-                                    src="../public/assets/icons/heart.svg"
+                                    src={likes}
                                     className="w-5 h-5"
                                     width={50}
                                     height={50}
@@ -86,7 +87,7 @@ const PhotoDetails = async ({ id, lang }) => {
                             </button>
                             <button className="flex-1 border py-1.5 rounded text-xs lg:text-sm flex items-center justify-center text-center gap-1.5 font-bold hover:bg-yellow-400">
                                 <Image
-                                    src="../public/assets/icons/save.svg"
+                                    src={save}
                                     className="w-5 h-5"
                                     width={50}
                                     height={50}
@@ -96,7 +97,7 @@ const PhotoDetails = async ({ id, lang }) => {
                             </button>
                             <button className="flex-1 border py-1.5 rounded text-xs lg:text-sm flex items-center justify-center text-center gap-1.5 font-bold hover:bg-yellow-400">
                                 <Image
-                                    src="../public/assets/icons/share.svg"
+                                    src={shares}
                                     className="w-5 h-5"
                                     width={50}
                                     height={50}
