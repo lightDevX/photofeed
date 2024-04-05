@@ -1,8 +1,13 @@
+import PhotoCard from "./PhotoCard";
 
-const PhotoList = () => {
+const PhotoList = ({ photos }) => {
     return (
-        <div>
-
+        <div className="img-grid">
+            {
+                photos.map(photo => (
+                    <PhotoCard key={photo.id} photo={photo} />
+                ))
+            }
         </div>
     );
 };
